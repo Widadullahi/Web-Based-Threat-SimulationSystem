@@ -55,7 +55,6 @@ const projectStats = [
   { label: "Threat Modules", value: "04" },
   { label: "Response Feedback", value: "Instant" },
   { label: "Storage", value: "Browser Local" },
-  { label: "Learning Mode", value: "Interactive" },
 ];
 
 const objectives = [
@@ -187,20 +186,16 @@ const Landing = () => {
         <section id="home" className="px-6 pb-20 pt-12 md:pt-16">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <motion.div
-              className="rounded-[32px] glass-panel-strong surface-outline p-8 md:p-10"
+              className="p-2 md:p-4"
               variants={fadeUp}
               initial="hidden"
               animate="show"
               transition={{ duration: 0.55 }}
             >
-              <div className="mb-8 flex flex-wrap items-center gap-3">
+              <div className="mb-6 flex flex-wrap items-center gap-3">
                 <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   <BookOpenText className="h-3.5 w-3.5 text-primary" />
                   Threat Simulation Interface
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/40 px-3 py-1.5 text-xs font-medium text-muted-foreground">
-                  <Trophy className="h-3.5 w-3.5 text-accent" />
-                  Built for practical awareness training
                 </span>
               </div>
 
@@ -209,7 +204,7 @@ const Landing = () => {
                 <span className="block text-muted-foreground">without the visual noise.</span>
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
                 Web-Based Threat Simulation System teaches phishing detection, password hygiene, malicious URL recognition,
                 and social engineering awareness through focused browser simulations and immediate feedback.
               </p>
@@ -230,11 +225,11 @@ const Landing = () => {
                 </button>
               </div>
 
-              <div className="mt-10 grid gap-3 md:grid-cols-4">
+              <div className="mt-8 grid gap-6 border-t border-border/70 pt-6 md:grid-cols-3">
                 {projectStats.map((stat, index) => (
                   <motion.div
                     key={stat.label}
-                    className="rounded-2xl border border-border/80 bg-background/35 p-4"
+                    className="p-1"
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.08 * index }}
@@ -249,13 +244,13 @@ const Landing = () => {
             </motion.div>
 
             <motion.div
-              className="space-y-6"
+              className="space-y-4"
               variants={fadeUp}
               initial="hidden"
               animate="show"
               transition={{ duration: 0.6, delay: 0.08 }}
             >
-              <div className="rounded-[30px] glass-panel surface-outline p-7">
+              <div className="p-2 md:p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                   Problem Statement
                 </p>
@@ -271,26 +266,9 @@ const Landing = () => {
                     "No account setup required",
                     "Built for demos, classes, and self-study",
                   ].map((item) => (
-                    <div key={item} className="flex items-start gap-3 rounded-2xl border border-border/70 bg-background/35 px-4 py-3">
+                    <div key={item} className="flex items-start gap-3 border-b border-border/50 py-3 last:border-b-0">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
                       <span className="text-sm text-foreground">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-[30px] glass-panel surface-outline p-7">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  Experience Tone
-                </p>
-                <div className="mt-5 grid gap-3">
-                  {[
-                    "Calm glass surfaces instead of bright gradients",
-                    "Measured animation for motion without clutter",
-                    "Clear hierarchy for faster scanning",
-                  ].map((item) => (
-                    <div key={item} className="rounded-2xl border border-border/70 bg-background/35 px-4 py-3 text-sm text-foreground">
-                      {item}
                     </div>
                   ))}
                 </div>
@@ -320,7 +298,7 @@ const Landing = () => {
               {objectives.map((item, index) => (
                 <motion.div
                   key={item}
-                  className="rounded-[26px] glass-panel surface-outline p-5"
+                  className="border-b border-border/60 pb-4"
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="show"
@@ -358,7 +336,7 @@ const Landing = () => {
                   <motion.button
                     key={module.title}
                     onClick={() => navigate(module.route)}
-                    className="rounded-[28px] glass-panel surface-outline p-6 text-left transition-transform hover:-translate-y-1"
+                    className="border-b border-border/60 pb-6 text-left transition-transform hover:-translate-y-1"
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="show"
@@ -366,10 +344,10 @@ const Landing = () => {
                     transition={{ duration: 0.42, delay: index * 0.06 }}
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <span className={`flex h-12 w-12 items-center justify-center rounded-2xl border border-border/80 bg-background/40 ${module.tone}`}>
+                      <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${module.tone}`}>
                         <Icon className="h-5 w-5" />
                       </span>
-                      <span className="rounded-full border border-border/80 bg-background/35 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                      <span className="px-1 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                         Simulation
                       </span>
                     </div>
@@ -389,7 +367,7 @@ const Landing = () => {
         <section id="methodology" className="px-6 py-14">
           <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.95fr_1.05fr]">
             <motion.div
-              className="rounded-[30px] glass-panel surface-outline p-7"
+              className="py-2"
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -400,7 +378,7 @@ const Landing = () => {
               <h2 className="mt-3 text-3xl font-bold tracking-[-0.03em]">Simple path, fast feedback.</h2>
               <div className="mt-6 space-y-3">
                 {workflowSteps.map((step, index) => (
-                  <div key={step} className="rounded-2xl border border-border/70 bg-background/35 px-4 py-4">
+                  <div key={step} className="border-b border-border/60 px-1 py-4">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Step {index + 1}</p>
                     <p className="mt-1 text-sm text-foreground">{step}</p>
                   </div>
@@ -409,7 +387,7 @@ const Landing = () => {
             </motion.div>
 
             <motion.div
-              className="rounded-[30px] glass-panel surface-outline p-7"
+              className="py-2"
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -422,9 +400,9 @@ const Landing = () => {
                 {architectureCards.map((card) => {
                   const Icon = card.icon;
                   return (
-                    <div key={card.title} className="rounded-2xl border border-border/70 bg-background/35 p-4">
+                    <div key={card.title} className="border-b border-border/60 pb-4">
                       <div className="flex items-start gap-4">
-                        <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border/80 bg-background/45 text-primary">
+                        <span className="flex h-11 w-11 items-center justify-center rounded-2xl text-primary">
                           <Icon className="h-4 w-4" />
                         </span>
                         <div>
@@ -459,7 +437,7 @@ const Landing = () => {
                 return (
                   <motion.div
                     key={item.title}
-                    className="rounded-[28px] glass-panel surface-outline p-6"
+                    className="border-b border-border/60 pb-6"
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="show"
@@ -467,7 +445,7 @@ const Landing = () => {
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                   >
                     <div className="flex items-start gap-4">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border/80 bg-background/40 text-accent">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl text-accent">
                         <Icon className="h-5 w-5" />
                       </span>
                       <div>
@@ -483,9 +461,9 @@ const Landing = () => {
         </section>
 
         <section id="faq" className="px-6 py-14 pb-20">
-          <div className="mx-auto max-w-5xl rounded-[34px] glass-panel-strong surface-outline p-8 md:p-10">
+          <div className="mx-auto max-w-5xl p-2 md:p-4">
             <div className="mx-auto max-w-3xl text-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/35 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                 <Star className="h-3.5 w-3.5 text-accent" />
                 FAQ
               </span>
@@ -497,14 +475,14 @@ const Landing = () => {
 
             <div className="mt-10 grid gap-4 md:grid-cols-2">
               {faqs.map((item) => (
-                <div key={item.q} className="rounded-2xl border border-border/70 bg-background/35 p-5">
+                <div key={item.q} className="border-b border-border/60 pb-5">
                   <p className="font-semibold text-foreground">{item.q}</p>
                   <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.a}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10 rounded-[28px] border border-border/80 bg-background/35 p-6 text-center md:p-8">
+            <div className="mt-10 border-t border-border/70 pt-8 text-center">
               <h3 className="text-2xl font-bold tracking-[-0.02em]">Ready to start training?</h3>
               <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
                 Open a module, make decisions, and build sharper instincts through repetition.

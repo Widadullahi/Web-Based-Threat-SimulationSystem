@@ -64,11 +64,6 @@
     @apply bg-background text-foreground font-sans;
     font-family: "Manrope", sans-serif;
     background-color: hsl(var(--background));
-    background-image:
-      linear-gradient(hsl(216 18% 16% / 0.34) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(216 18% 16% / 0.34) 1px, transparent 1px);
-    background-size: 72px 72px;
-    background-position: center center;
     min-height: 100vh;
   }
 
@@ -81,7 +76,7 @@
       radial-gradient(circle at 18% 14%, hsl(190 87% 66% / 0.09), transparent 24%),
       radial-gradient(circle at 82% 10%, hsl(33 86% 66% / 0.06), transparent 22%),
       radial-gradient(circle at 50% 84%, hsl(206 70% 62% / 0.05), transparent 28%);
-    filter: blur(12px);
+    filter: blur(6px);
   }
 
   ::selection {
@@ -119,16 +114,16 @@
     box-shadow: inset 0 0 0 1px hsl(255 255 255 / 0.02), var(--glow-primary);
   }
   .glass-panel {
-    background: hsl(var(--card) / 0.72);
-    backdrop-filter: blur(18px);
+    background: hsl(var(--card) / 0.88);
+    backdrop-filter: blur(8px);
     border: 1px solid hsl(var(--border) / 0.9);
     box-shadow:
       inset 0 1px 0 hsl(0 0% 100% / 0.05),
       0 24px 70px hsl(222 40% 4% / 0.34);
   }
   .glass-panel-strong {
-    background: hsl(var(--card) / 0.86);
-    backdrop-filter: blur(24px);
+    background: hsl(var(--card) / 0.94);
+    backdrop-filter: blur(10px);
     border: 1px solid hsl(var(--border));
     box-shadow:
       inset 0 1px 0 hsl(0 0% 100% / 0.06),

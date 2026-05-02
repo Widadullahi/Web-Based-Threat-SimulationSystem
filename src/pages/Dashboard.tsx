@@ -11,10 +11,10 @@ import PageTransition from "@/components/PageTransition";
 import { getProgress, type UserProgress } from "@/lib/progress";
 
 const scenarios = [
-  { id: "phishing", title: "Phishing Detection", description: "Identify suspicious emails from legitimate ones", icon: Mail, path: "/sim/phishing", color: "text-secondary", borderColor: "border-secondary/30" },
-  { id: "password", title: "Password Strength", description: "Learn to create unbreakable passwords", icon: Key, path: "/sim/password", color: "text-accent", borderColor: "border-accent/30" },
-  { id: "malicious-url", title: "URL Scanner", description: "Spot dangerous links before clicking", icon: Globe, path: "/sim/url", color: "text-destructive", borderColor: "border-destructive/30" },
-  { id: "social-engineering", title: "Social Engineering", description: "Detect phone, SMS & in-person scams", icon: Users, path: "/sim/social", color: "text-primary", borderColor: "border-primary/30" },
+  { id: "phishing", title: "Phishing Detection", description: "Identify suspicious emails from legitimate ones", icon: Mail, path: "/sim/phishing" },
+  { id: "password", title: "Password Strength", description: "Learn to create unbreakable passwords", icon: Key, path: "/sim/password" },
+  { id: "malicious-url", title: "URL Scanner", description: "Spot dangerous links before clicking", icon: Globe, path: "/sim/url" },
+  { id: "social-engineering", title: "Social Engineering", description: "Detect phone, SMS & in-person scams", icon: Users, path: "/sim/social" },
 ];
 
 const Dashboard = () => {
@@ -63,12 +63,14 @@ const Dashboard = () => {
           {/* Stats row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { icon: Target, label: "Modules Completed", value: `${completedCount}/${scenarios.length}`, iconColor: "text-primary" },
-              { icon: Zap, label: "Total Score", value: progress.totalScore, iconColor: "text-accent" },
-              { icon: Shield, label: "Rank", value: completedCount === 4 ? "Expert" : completedCount >= 2 ? "Trainee" : "Rookie", iconColor: "text-secondary" },
+              { icon: Target, label: "Modules Completed", value: `${completedCount}/${scenarios.length}` },
+              { icon: Zap, label: "Total Score", value: progress.totalScore },
+              { icon: Shield, label: "Rank", value: completedCount === 4 ? "Expert" : completedCount >= 2 ? "Trainee" : "Rookie" },
             ].map((stat) => (
-              <motion.div key={stat.label} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="bg-card border border-border rounded-lg p-4 flex items-center gap-4">
-                <div className="p-2 bg-primary/10 rounded-lg"><stat.icon className={`h-6 w-6 ${stat.iconColor}`} /></div>
+              <motion.div key={stat.label} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass-panel rounded-[22px] p-4 flex items-center gap-4">
+                <div className="rounded-2xl border border-border/70 bg-background/45 p-2.5">
+                  <stat.icon className="h-5 w-5 text-foreground" />
+                </div>
                 <div>
                   <p className="font-mono text-2xl font-bold text-foreground">{stat.value}</p>
                   <p className="font-mono text-xs text-muted-foreground">{stat.label}</p>
@@ -114,14 +116,16 @@ const Dashboard = () => {
                 const score = progress.scores[scenario.id];
                 return (
                   <motion.div key={scenario.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}>
-                    <Link to={scenario.path} className={`block bg-card border ${scenario.borderColor} rounded-lg p-6 hover:border-primary/50 hover:bg-card/80 transition-all group`}>
+                    <Link to={scenario.path} className="glass-panel block rounded-[24px] p-6 transition-all group hover:border-primary/40 hover:bg-card/90">
                       <div className="flex items-start justify-between mb-4">
-                        <Icon className={`h-8 w-8 ${scenario.color}`} />
-                        {completed && <span className="text-xs font-mono bg-primary/10 text-primary px-2 py-1 rounded">{score}%</span>}
+                        <div className="rounded-2xl border border-border/70 bg-background/45 p-3">
+                          <Icon className="h-6 w-6 text-foreground" />
+                        </div>
+                        {completed && <span className="rounded-full border border-border/70 bg-background/45 px-2.5 py-1 text-xs font-mono text-foreground">{score}%</span>}
                       </div>
                       <h3 className="font-mono font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{scenario.title}</h3>
                       <p className="text-sm text-muted-foreground">{scenario.description}</p>
-                      <p className="text-xs font-mono text-primary/80 mt-3 inline-flex items-center gap-1">
+                      <p className="mt-3 inline-flex items-center gap-1 text-xs font-mono text-muted-foreground group-hover:text-foreground transition-colors">
                         {completed ? "Retry module" : "Start module"} <ArrowRight className="h-3.5 w-3.5" />
                       </p>
                     </Link>

@@ -131,7 +131,7 @@ const Resources = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.08 }}
-                  className="bg-card border border-border rounded-lg p-5 space-y-3"
+                  className="glass-panel surface-outline space-y-3 rounded-[24px] p-5"
                 >
                   <div className="flex items-center gap-2">
                     <Icon className={`h-5 w-5 ${section.color}`} />
@@ -153,7 +153,7 @@ const Resources = () => {
           </div>
 
           {/* External resources */}
-          <div className="bg-card border border-border rounded-lg p-6">
+          <div className="glass-panel surface-outline rounded-[26px] p-6">
             <h3 className="font-mono font-semibold text-foreground mb-4 flex items-center gap-2">
               <Shield className="h-5 w-5 text-primary" />
               External Resources

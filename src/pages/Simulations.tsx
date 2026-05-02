@@ -28,7 +28,7 @@ const Simulations = () => {
         <div className="space-y-6">
           <div>
             <h1 className="text-2xl font-mono font-bold text-foreground">Threat Simulations</h1>
-            <p className="text-muted-foreground text-sm mt-1">Choose a module to begin your training</p>
+            <p className="mt-1 text-sm text-muted-foreground">Choose a module to begin your training</p>
           </div>
 
           <div className="grid gap-4">
@@ -38,13 +38,13 @@ const Simulations = () => {
               const score = progress?.scores[s.id];
               return (
                 <motion.div key={s.id} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.08 }}>
-                  <Link to={s.path} className={`bg-card border ${s.border} rounded-lg p-6 hover:border-primary/50 transition-all group flex items-start gap-6`}>
-                    <div className="p-3 bg-muted rounded-lg"><Icon className={`h-8 w-8 ${s.color}`} /></div>
+                  <Link to={s.path} className={`glass-panel surface-outline group flex items-start gap-6 rounded-[26px] border p-6 transition-all hover:-translate-y-0.5 ${s.border}`}>
+                    <div className="rounded-2xl border border-border/70 bg-background/45 p-3"><Icon className={`h-8 w-8 ${s.color}`} /></div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
                         <h3 className="font-mono font-semibold text-foreground group-hover:text-primary transition-colors">{s.title}</h3>
                         <div className="flex items-center gap-3">
-                          {completed && <span className="text-xs font-mono bg-primary/10 text-primary px-2 py-1 rounded">{score}%</span>}
+                          {completed && <span className="rounded-full border border-border/70 bg-background/45 px-2.5 py-1 text-xs font-mono text-primary">{score}%</span>}
                           <span className="text-xs font-mono text-muted-foreground">{s.difficulty}</span>
                         </div>
                       </div>

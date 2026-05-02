@@ -1,6 +1,6 @@
-# CyberGuard
+# Web-Based Threat Simulation System
 
-CyberGuard is a web-based cybersecurity training platform built with React, TypeScript, Vite, and Tailwind CSS.
+Web-Based Threat Simulation System is a web-based cybersecurity training platform built with React, TypeScript, Vite, and Tailwind CSS.
 
 ## Features
 

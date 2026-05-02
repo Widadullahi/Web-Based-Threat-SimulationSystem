@@ -1,144 +1,140 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  Shield,
-  Mail,
-  Key,
-  Globe,
-  Users,
-  CheckCircle2,
+  Activity,
   ArrowRight,
   BookOpenText,
-  GraduationCap,
-  Building2,
-  Layers3,
-  Activity,
-  Trophy,
-  Server,
-  Database,
   BrainCircuit,
+  Building2,
+  CheckCircle2,
+  Database,
+  Globe,
+  GraduationCap,
+  Key,
+  Layers3,
+  Mail,
+  Server,
+  Shield,
   Star,
+  Trophy,
+  Users,
 } from "lucide-react";
 
 const trainingModules = [
   {
     title: "Phishing Analysis",
-    description: "Users analyze realistic emails to identify spoofing, urgency tricks, unsafe links, and data-harvesting requests.",
+    description: "Inspect sender patterns, urgency cues, and fake links in realistic email simulations.",
     icon: Mail,
     route: "/sim/phishing",
-    tone: "teal",
+    tone: "text-primary",
   },
   {
     title: "Password Lab",
-    description: "Users test password quality and learn how weak credentials are exposed to brute-force and dictionary attacks.",
+    description: "Measure password resilience and learn what separates disposable secrets from durable ones.",
     icon: Key,
     route: "/sim/password",
-    tone: "cyan",
+    tone: "text-accent",
   },
   {
     title: "URL Safety Check",
-    description: "Users inspect URLs for typo domains, suspicious paths, and deceptive structures before clicking.",
+    description: "Break down suspicious domains, deceptive paths, and homograph tricks before they get clicked.",
     icon: Globe,
     route: "/sim/url",
-    tone: "slate",
+    tone: "text-secondary",
   },
   {
     title: "Social Engineering",
-    description: "Users practice spotting manipulation tactics in messages and conversations.",
+    description: "Practice identifying manipulation in calls, texts, and in-person pretexting attempts.",
     icon: Users,
     route: "/sim/social",
-    tone: "amber",
+    tone: "text-primary",
   },
 ];
 
-const toneStyles: Record<string, { card: string; icon: string; badge: string }> = {
-  teal: {
-    card: "border-teal-200/80 bg-gradient-to-br from-teal-50 to-white",
-    icon: "text-teal-700 bg-white border border-teal-200",
-    badge: "text-teal-700 bg-teal-100",
-  },
-  cyan: {
-    card: "border-cyan-200/80 bg-gradient-to-br from-cyan-50 to-white",
-    icon: "text-cyan-700 bg-white border border-cyan-200",
-    badge: "text-cyan-700 bg-cyan-100",
-  },
-  slate: {
-    card: "border-slate-200/80 bg-gradient-to-br from-slate-50 to-white",
-    icon: "text-slate-700 bg-white border border-slate-200",
-    badge: "text-slate-700 bg-slate-100",
-  },
-  amber: {
-    card: "border-amber-200/80 bg-gradient-to-br from-amber-50 to-white",
-    icon: "text-amber-700 bg-white border border-amber-200",
-    badge: "text-amber-700 bg-amber-100",
-  },
-};
-
 const projectStats = [
-  { label: "Threat Modules", value: "4" },
-  { label: "Methodology", value: "Agile Iterative" },
-  { label: "Data Storage", value: "LocalStorage" },
-  { label: "Deployment", value: "Vercel" },
+  { label: "Threat Modules", value: "04" },
+  { label: "Response Feedback", value: "Instant" },
+  { label: "Storage", value: "Browser Local" },
+  { label: "Learning Mode", value: "Interactive" },
 ];
 
 const objectives = [
-  "Design a simple and user-friendly interface for cybersecurity learning.",
-  "Develop practical simulations for phishing, weak passwords, malicious URLs, and social engineering.",
-  "Provide immediate feedback that explains mistakes and safer alternatives.",
-  "Track user progress and performance to evaluate learning outcomes.",
+  "Design a clean, accessible training environment for cybersecurity awareness.",
+  "Simulate phishing, weak passwords, malicious URLs, and social engineering.",
+  "Return immediate feedback that explains both the mistake and the safer action.",
+  "Track progress and scores so learning improves across sessions.",
 ];
 
 const workflowSteps = [
-  "Select a threat scenario.",
-  "Analyze indicators in the scenario.",
-  "Submit decision.",
-  "Receive instant feedback and score.",
-  "Save progress for future sessions.",
+  "Choose a threat module.",
+  "Review the scenario and inspect its signals.",
+  "Submit a decision.",
+  "Read the explanation and score.",
+  "Return later with saved local progress.",
 ];
 
 const architectureCards = [
   {
-    title: "Client Application",
-    text: "React-based interface for navigation, simulations, and feedback rendering.",
+    title: "Client Interface",
+    text: "React routes, motion, and focused interaction design drive the training flow.",
     icon: Server,
   },
   {
-    title: "Data Persistence",
-    text: "LocalStorage stores user attempts, scores, and progress history.",
-    icon: Database,
+    title: "Simulation Logic",
+    text: "Scenario datasets evaluate decisions and attach educational feedback to each answer.",
+    icon: BrainCircuit,
   },
   {
-    title: "Simulation Engine",
-    text: "Scenario logic evaluates user responses and returns educational feedback.",
-    icon: BrainCircuit,
+    title: "Local Persistence",
+    text: "Progress, totals, and leaderboard state are stored directly in the browser.",
+    icon: Database,
   },
 ];
 
 const contributions = [
   {
     title: "For Students",
-    text: "Hands-on cybersecurity learning in a safe browser environment.",
+    text: "Turns abstract cyber advice into repeatable practice inside a safe environment.",
     icon: GraduationCap,
   },
   {
     title: "For Institutions",
-    text: "Lightweight platform suitable for awareness training and classroom demonstrations.",
+    text: "Works as a lightweight awareness tool for labs, workshops, and classroom demos.",
     icon: Building2,
   },
   {
     title: "For Research",
-    text: "Foundation for future extensions such as adaptive difficulty and broader threat categories.",
+    text: "Creates a base for adaptive difficulty, analytics, and larger scenario libraries.",
     icon: Layers3,
   },
   {
     title: "For Practice",
-    text: "Moves learners from theory to practical decision-making behavior.",
+    text: "Encourages better judgment under pressure, not just passive reading.",
     icon: Activity,
   },
 ];
 
+const faqs = [
+  {
+    q: "Does this platform run real attacks?",
+    a: "No. Every exercise is a contained educational simulation.",
+  },
+  {
+    q: "Do learners need accounts?",
+    a: "No. Progress is stored in the current browser with LocalStorage.",
+  },
+  {
+    q: "Who is it designed for?",
+    a: "Students, beginners, and non-technical users building safer web habits.",
+  },
+  {
+    q: "Is it suitable for academic presentation?",
+    a: "Yes. It shows the problem, objectives, system flow, and measurable outcomes clearly.",
+  },
+];
+
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 22 },
   show: { opacity: 1, y: 0 },
 };
 
@@ -150,24 +146,36 @@ const Landing = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <button onClick={() => goTo("home")} className="flex items-center gap-2 cursor-pointer">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-teal-100 to-cyan-100 border border-teal-200">
-              <Shield className="h-5 w-5 text-teal-700" />
+    <div className="min-h-screen text-foreground">
+      <header className="sticky top-0 z-50 border-b border-border/80 bg-background/70 backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <button onClick={() => goTo("home")} className="flex items-center gap-3 text-left">
+            <span className="flex h-11 w-11 items-center justify-center rounded-2xl glass-panel surface-outline">
+              <Shield className="h-5 w-5 text-primary" />
             </span>
-            <span className="font-bold text-lg tracking-tight">CyberGuard</span>
+            <span className="block max-w-[16rem] text-sm font-semibold leading-tight text-foreground">
+              Web-Based Threat Simulation System
+            </span>
           </button>
 
-          <nav className="hidden md:flex items-center gap-6">
-            <button onClick={() => goTo("overview")} className="text-sm text-slate-600 hover:text-teal-700">Overview</button>
-            <button onClick={() => goTo("modules")} className="text-sm text-slate-600 hover:text-teal-700">Modules</button>
-            <button onClick={() => goTo("methodology")} className="text-sm text-slate-600 hover:text-teal-700">Methodology</button>
-            <button onClick={() => goTo("faq")} className="text-sm text-slate-600 hover:text-teal-700">FAQ</button>
+          <nav className="hidden items-center gap-6 md:flex">
+            {[
+              ["overview", "Overview"],
+              ["modules", "Modules"],
+              ["methodology", "Workflow"],
+              ["faq", "FAQ"],
+            ].map(([id, label]) => (
+              <button
+                key={id}
+                onClick={() => goTo(id)}
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {label}
+              </button>
+            ))}
             <button
               onClick={() => navigate("/login")}
-              className="px-5 py-2.5 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold"
+              className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_12px_30px_hsl(var(--primary)/0.25)] transition-transform hover:-translate-y-0.5"
             >
               Start Training
             </button>
@@ -175,292 +183,351 @@ const Landing = () => {
         </div>
       </header>
 
-      <section id="home" className="pt-32 pb-16 px-6 relative overflow-hidden">
-        <div className="absolute -top-24 -left-16 h-64 w-64 rounded-full bg-teal-100/70 blur-3xl" />
-        <div className="absolute top-0 right-0 h-72 w-72 rounded-full bg-cyan-100/70 blur-3xl" />
-
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 items-center relative">
-          <motion.div className="lg:col-span-7 space-y-6" variants={fadeUp} initial="hidden" animate="show" transition={{ duration: 0.6 }}>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-teal-100 text-teal-700 border border-teal-200">
-              <BookOpenText className="h-3.5 w-3.5" />
-              Final Year Project: Web-Based Threat Simulation System
-            </span>
-
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-              Build Safer Online Habits Through
-              <span className="block text-teal-700">Interactive Threat Scenarios</span>
-            </h1>
-
-            <p className="text-slate-600 text-lg leading-relaxed max-w-2xl">
-              This platform is designed to improve cybersecurity awareness for students and non-technical users.
-              It teaches practical response skills through controlled simulations and immediate feedback.
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              <button
-                onClick={() => navigate("/login")}
-                className="px-7 py-3 rounded-lg bg-teal-600 hover:bg-teal-700 text-white font-semibold inline-flex items-center gap-2 shadow-sm"
-              >
-                Enter Platform <ArrowRight className="h-4 w-4" />
-              </button>
-              <button
-                onClick={() => goTo("overview")}
-                className="px-7 py-3 rounded-lg border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 font-semibold"
-              >
-                View Project Details
-              </button>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-3 pt-2">
-              {projectStats.map((stat) => (
-                <motion.div
-                  key={stat.label}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="show"
-                  transition={{ duration: 0.45 }}
-                >
-                  <p className="text-sm text-slate-500">{stat.label}</p>
-                  <p className="font-semibold text-slate-900 mt-0.5">{stat.value}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div className="lg:col-span-5 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-cyan-50 p-6 shadow-lg" variants={fadeUp} initial="hidden" animate="show" transition={{ duration: 0.65, delay: 0.1 }}>
-            <h3 className="font-semibold text-lg">Project Problem Statement</h3>
-            <p className="text-slate-600 text-sm mt-3 leading-relaxed">
-              Many users only understand cyber threats after they have already been affected. Existing training tools can be costly,
-              technical, or inaccessible. This project addresses that gap with a simple, browser-based simulation system.
-            </p>
-            <div className="mt-5 space-y-3">
-              {[
-                "Safe and controlled learning environment",
-                "Beginner-friendly simulations with practical context",
-                "Immediate feedback for better retention",
-                "Local progress tracking without complex setup",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section id="overview" className="py-20 px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div className="max-w-3xl mb-8" variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl font-bold mb-3">Project Objectives</h2>
-            <p className="text-slate-600 text-lg">
-              The landing page content below directly reflects the approved proposal objectives and expected academic output.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            {objectives.map((item, i) => (
-              <motion.div
-                key={item}
-                className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: i * 0.06 }}
-              >
-                <div className="flex items-start gap-2 text-slate-700">
-                  <CheckCircle2 className="h-4 w-4 text-teal-700 mt-0.5" />
-                  <span>{item}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="modules" className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div className="max-w-2xl mb-10" variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl font-bold mb-3">Core Simulation Modules</h2>
-            <p className="text-slate-600">
-              Each module represents a common real-world cyber threat and provides educational feedback after each user decision.
-            </p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-5">
-            {trainingModules.map((module, idx) => {
-              const Icon = module.icon;
-              const style = toneStyles[module.tone];
-              return (
-                <motion.div
-                  key={module.title}
-                  className={`rounded-2xl border p-6 ${style.card} shadow-sm hover:shadow-md transition-shadow`}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: idx * 0.06 }}
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className={`h-11 w-11 rounded-lg flex items-center justify-center ${style.icon}`}>
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <span className={`text-xs px-2 py-1 rounded-full ${style.badge}`}>Module</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mt-4">{module.title}</h3>
-                  <p className="text-slate-600 text-sm mt-2 leading-relaxed">{module.description}</p>
-                  <button
-                    onClick={() => navigate(module.route)}
-                    className="mt-5 text-sm font-semibold text-teal-700 hover:text-teal-800 inline-flex items-center gap-1"
-                  >
-                    Launch Module <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section id="methodology" className="py-20 px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl font-bold mb-3">Methodology and Workflow</h2>
-            <p className="text-slate-600 mb-6">
-              The project follows Agile development and a structured learning cycle for each simulation session.
-            </p>
-            <div className="space-y-3">
-              {workflowSteps.map((step) => (
-                <div key={step} className="flex items-start gap-2 text-slate-700 rounded-lg border border-slate-200 bg-white p-3">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" />
-                  <span>{step}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div className="space-y-4" variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.55 }}>
-            <h3 className="text-xl font-semibold">System Architecture</h3>
-            {architectureCards.map((card) => {
-              const Icon = card.icon;
-              return (
-                <div key={card.title} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                  <div className="flex items-start gap-3">
-                    <div className="h-10 w-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center border border-slate-200">
-                      <Icon className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">{card.title}</p>
-                      <p className="text-sm text-slate-600 mt-1">{card.text}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div className="max-w-3xl mb-10" variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl font-bold mb-3">Expected Contributions</h2>
-            <p className="text-slate-600">
-              The project contributes to user education, institutional training, and future cybersecurity research extensions.
-            </p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-5">
-            {contributions.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: idx * 0.06 }}
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="h-11 w-11 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold">{item.title}</h3>
-                      <p className="text-slate-600 text-sm mt-2 leading-relaxed">{item.text}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" className="py-20 px-6 bg-slate-900 text-slate-100">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-200 mb-4">
-              <Star className="h-3.5 w-3.5" />
-              Frequently Asked Questions
-            </span>
-            <h2 className="text-3xl font-bold mb-3">Project Clarifications</h2>
-            <p className="text-slate-300">
-              This platform is an educational simulation system and does not perform real offensive attacks.
-            </p>
-          </div>
-
-          <div className="mt-8 grid md:grid-cols-2 gap-4">
-            {[
-              {
-                q: "Does this platform run real attacks?",
-                a: "No. Every activity is controlled simulation for educational purposes only.",
-              },
-              {
-                q: "Do learners need accounts?",
-                a: "No. Progress is stored in the browser via LocalStorage.",
-              },
-              {
-                q: "Who can use this system?",
-                a: "Students, beginners, and non-technical users interested in practical cybersecurity awareness.",
-              },
-              {
-                q: "Is this suitable for project defense?",
-                a: "Yes. It demonstrates objectives, methodology, modules, and measurable user outcomes.",
-              },
-            ].map((item) => (
-              <div key={item.q} className="rounded-xl border border-slate-700 bg-slate-800 p-4">
-                <p className="font-semibold">{item.q}</p>
-                <p className="text-slate-300 text-sm mt-1">{item.a}</p>
+      <main>
+        <section id="home" className="px-6 pb-20 pt-12 md:pt-16">
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+            <motion.div
+              className="rounded-[32px] glass-panel-strong surface-outline p-8 md:p-10"
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              transition={{ duration: 0.55 }}
+            >
+              <div className="mb-8 flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  <BookOpenText className="h-3.5 w-3.5 text-primary" />
+                  Threat Simulation Interface
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/40 px-3 py-1.5 text-xs font-medium text-muted-foreground">
+                  <Trophy className="h-3.5 w-3.5 text-accent" />
+                  Built for practical awareness training
+                </span>
               </div>
-            ))}
-          </div>
 
-          <div className="mt-10 rounded-2xl border border-slate-700 bg-gradient-to-r from-teal-700/25 to-cyan-700/20 p-6 md:p-8 text-center">
-            <h3 className="text-2xl font-bold">Ready to Begin the Training?</h3>
-            <p className="text-slate-300 mt-2 max-w-2xl mx-auto">
-              Start any module and evaluate your cybersecurity decision-making skills.
-            </p>
-            <div className="mt-6 flex items-center justify-center gap-3 flex-wrap">
-              <button
-                onClick={() => navigate("/login")}
-                className="px-7 py-3 rounded-lg bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold inline-flex items-center gap-2"
-              >
-                Start Practicing <ArrowRight className="h-4 w-4" />
-              </button>
-              <button
-                onClick={() => goTo("modules")}
-                className="px-7 py-3 rounded-lg border border-slate-500 text-slate-100 hover:bg-slate-800 font-semibold"
-              >
-                Review Modules
-              </button>
+              <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-[-0.04em] md:text-6xl">
+                Train better threat instincts
+                <span className="block text-muted-foreground">without the visual noise.</span>
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
+                Web-Based Threat Simulation System teaches phishing detection, password hygiene, malicious URL recognition,
+                and social engineering awareness through focused browser simulations and immediate feedback.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <button
+                  onClick={() => navigate("/login")}
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_14px_36px_hsl(var(--primary)/0.22)] transition-transform hover:-translate-y-0.5"
+                >
+                  Enter Platform
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => goTo("modules")}
+                  className="rounded-full border border-border bg-background/35 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-background/55"
+                >
+                  Explore Modules
+                </button>
+              </div>
+
+              <div className="mt-10 grid gap-3 md:grid-cols-4">
+                {projectStats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    className="rounded-2xl border border-border/80 bg-background/35 p-4"
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.08 * index }}
+                  >
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      {stat.label}
+                    </p>
+                    <p className="mt-2 text-lg font-semibold text-foreground">{stat.value}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="space-y-6"
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              transition={{ duration: 0.6, delay: 0.08 }}
+            >
+              <div className="rounded-[30px] glass-panel surface-outline p-7">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                  Problem Statement
+                </p>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                  Most users meet cyber threats for the first time during a real incident.
+                  This project closes that gap with controlled practice that feels immediate, understandable,
+                  and safe to repeat.
+                </p>
+                <div className="mt-6 space-y-3">
+                  {[
+                    "Focused, low-friction learning flow",
+                    "Fast explanation after every decision",
+                    "No account setup required",
+                    "Built for demos, classes, and self-study",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3 rounded-2xl border border-border/70 bg-background/35 px-4 py-3">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
+                      <span className="text-sm text-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[30px] glass-panel surface-outline p-7">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                  Experience Tone
+                </p>
+                <div className="mt-5 grid gap-3">
+                  {[
+                    "Calm glass surfaces instead of bright gradients",
+                    "Measured animation for motion without clutter",
+                    "Clear hierarchy for faster scanning",
+                  ].map((item) => (
+                    <div key={item} className="rounded-2xl border border-border/70 bg-background/35 px-4 py-3 text-sm text-foreground">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section id="overview" className="px-6 py-14">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              className="mb-8 max-w-3xl"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.45 }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Objectives</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-[-0.03em] md:text-4xl">A practical training tool, not a brochure.</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                The platform is designed to teach recognition and response, not just theory.
+              </p>
+            </motion.div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {objectives.map((item, index) => (
+                <motion.div
+                  key={item}
+                  className="rounded-[26px] glass-panel surface-outline p-5"
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.38, delay: index * 0.06 }}
+                >
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-1 h-4 w-4 text-primary" />
+                    <p className="text-sm leading-7 text-foreground">{item}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section id="modules" className="px-6 py-14">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              className="mb-10 max-w-2xl"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Core Modules</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-[-0.03em] md:text-4xl">Four focused simulations for everyday threats.</h2>
+            </motion.div>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {trainingModules.map((module, index) => {
+                const Icon = module.icon;
+                return (
+                  <motion.button
+                    key={module.title}
+                    onClick={() => navigate(module.route)}
+                    className="rounded-[28px] glass-panel surface-outline p-6 text-left transition-transform hover:-translate-y-1"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.25 }}
+                    transition={{ duration: 0.42, delay: index * 0.06 }}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <span className={`flex h-12 w-12 items-center justify-center rounded-2xl border border-border/80 bg-background/40 ${module.tone}`}>
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <span className="rounded-full border border-border/80 bg-background/35 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                        Simulation
+                      </span>
+                    </div>
+                    <h3 className="mt-5 text-xl font-semibold tracking-[-0.02em]">{module.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-muted-foreground">{module.description}</p>
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                      Launch Module
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </motion.button>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section id="methodology" className="px-6 py-14">
+          <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+            <motion.div
+              className="rounded-[30px] glass-panel surface-outline p-7"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.45 }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Workflow</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-[-0.03em]">Simple path, fast feedback.</h2>
+              <div className="mt-6 space-y-3">
+                {workflowSteps.map((step, index) => (
+                  <div key={step} className="rounded-2xl border border-border/70 bg-background/35 px-4 py-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Step {index + 1}</p>
+                    <p className="mt-1 text-sm text-foreground">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="rounded-[30px] glass-panel surface-outline p-7"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Architecture</p>
+              <h3 className="mt-3 text-3xl font-bold tracking-[-0.03em]">Browser-native by design.</h3>
+              <div className="mt-6 grid gap-4">
+                {architectureCards.map((card) => {
+                  const Icon = card.icon;
+                  return (
+                    <div key={card.title} className="rounded-2xl border border-border/70 bg-background/35 p-4">
+                      <div className="flex items-start gap-4">
+                        <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border/80 bg-background/45 text-primary">
+                          <Icon className="h-4 w-4" />
+                        </span>
+                        <div>
+                          <p className="font-semibold text-foreground">{card.title}</p>
+                          <p className="mt-2 text-sm leading-7 text-muted-foreground">{card.text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="px-6 py-14">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              className="mb-10 max-w-3xl"
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">Contributions</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-[-0.03em] md:text-4xl">Useful for learning now, extendable later.</h2>
+            </motion.div>
+            <div className="grid gap-5 md:grid-cols-2">
+              {contributions.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.title}
+                    className="rounded-[28px] glass-panel surface-outline p-6"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                  >
+                    <div className="flex items-start gap-4">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border/80 bg-background/40 text-accent">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <h3 className="text-lg font-semibold tracking-[-0.02em]">{item.title}</h3>
+                        <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.text}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="px-6 py-14 pb-20">
+          <div className="mx-auto max-w-5xl rounded-[34px] glass-panel-strong surface-outline p-8 md:p-10">
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/35 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                <Star className="h-3.5 w-3.5 text-accent" />
+                FAQ
+              </span>
+              <h2 className="mt-5 text-3xl font-bold tracking-[-0.03em] md:text-4xl">A few practical clarifications.</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Web-Based Threat Simulation System is built to teach safer decisions, not simulate offensive behavior.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+              {faqs.map((item) => (
+                <div key={item.q} className="rounded-2xl border border-border/70 bg-background/35 p-5">
+                  <p className="font-semibold text-foreground">{item.q}</p>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">{item.a}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 rounded-[28px] border border-border/80 bg-background/35 p-6 text-center md:p-8">
+              <h3 className="text-2xl font-bold tracking-[-0.02em]">Ready to start training?</h3>
+              <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+                Open a module, make decisions, and build sharper instincts through repetition.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <button
+                  onClick={() => navigate("/login")}
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_14px_36px_hsl(var(--primary)/0.22)] transition-transform hover:-translate-y-0.5"
+                >
+                  Start Practicing
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => goTo("overview")}
+                  className="rounded-full border border-border bg-background/45 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-background/60"
+                >
+                  Review Objectives
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };
